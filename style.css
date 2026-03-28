@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+  --bg-color: #060606;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-orange: #ff6b00;
+  --accent-purple: #b026ff;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glow-orange: 0 0 20px rgba(255, 107, 0, 0.5);
+  --glow-purple: 0 0 20px rgba(176, 38, 255, 0.5);
+  --section-padding: 80px 5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--accent-orange), var(--accent-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Layout */
+section {
+  padding: var(--section-padding);
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-margin-top: 80px; /* Fixed header adjustment */
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(6, 6, 6, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover {
+  color: var(--accent-orange);
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/odisha_culture_vibrant.png') center/contain no-repeat;
+  background-attachment: fixed; /* Parallax effect */
+  opacity: 0.35; /* Perfectly visible */
+  z-index: -2;
+  mask-image: radial-gradient(circle, black 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(circle, black 40%, transparent 90%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(176, 38, 255, 0.15) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.btn {
+  padding: 15px 40px;
+  background: var(--accent-orange);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow-orange);
+}
+
+/* Work Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 15px;
+  padding: 30px;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  border-color: var(--accent-orange);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.2);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: var(--accent-orange);
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+
+.card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Contact Form */
+.contact-container {
+  max-width: 800px;
+  margin: 50px auto 0;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 15px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-orange);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Trusted Brands Carousel */
+.trusted-brands {
+  padding: 60px 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--glass-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.trusted-brands h4 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.logo-slider {
+  display: flex;
+  width: 200%; /* Enough for seamless loop */
+  animation: slide 20s linear infinite;
+}
+
+.logo-slider:hover {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  padding: 0 40px;
+  opacity: 0.8; /* Subtle transparency for dark theme blending */
+}
+
+.logo-item:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.logo-item img {
+  max-width: 150px;
+  height: auto;
+  transition: 0.3s;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .logo-slider {
+    animation-duration: 15s;
+  }
+  .logo-item {
+    width: 180px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  animation: fadeIn 0.8s ease forwards;
+}
+

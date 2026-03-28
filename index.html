@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCO | Komedy Countdown Odisha - Social Media Marketing</title>
+    <meta name="description" content="KCO provides premium social media marketing, viral content strategy, and influencer growth specifically for the Odisha region.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">KCO</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#work">Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1 class="animate">Your brand needs <span class="gradient-text">KCO</span> touch</h1>
+        <div class="animate">
+            <button class="btn" onclick="document.getElementById('contact').scrollIntoView()">Start Your Journey</button>
+        </div>
+    </section>
+
+    <section id="heritage" style="background: rgba(0,0,0,0.4); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border);">
+        <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 2.2rem; margin-bottom: 30px;">Cultural <span class="gradient-text">Heritage</span> & Vision</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem;">
+                Odisha has a centuries-old tradition of "Countdowns" – from the meticulous timing of the Rath Yatra to the precise movements of Odissi. At **KCO**, we bridge this ancient precision with modern social media algorithms. 
+            </p>
+            <div style="display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="color: var(--accent-orange); margin-bottom: 10px;">The Wheel</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Inspired by Konark's sundials, our strategies are timed to perfection for maximum viral impact.</p>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                    <h4 style="color: var(--accent-orange); margin-bottom: 10px;">The Patterns</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Like Pattachitra, every campaign we create is a detailed masterpiece of storytelling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work">
+        <h2 style="font-size: 2.5rem; text-align: center;">Our <span class="gradient-text">Work</span></h2>
+        <p style="text-align: center; color: var(--text-secondary); margin-top: 10px;">Recent viral campaigns and social growth results.</p>
+        
+        <div class="grid">
+            <div class="card animate" style="animation-delay: 0.2s;">
+                <h3>01. Viral Content</h3>
+                <p>Strategic comedy segments for Odia influencers that achieved over 1M+ views in under 48 hours. We specialize in high-retention entertainment.</p>
+            </div>
+            <div class="card animate" style="animation-delay: 0.4s;">
+                <h3>02. Growth Hacking</h3>
+                <p>Helping local Odisha brands scale their Instagram and YouTube presence by 300% within the first month using localized data-driven techniques.</p>
+            </div>
+            <div class="card animate" style="animation-delay: 0.6s;">
+                <h3>03. Influencer Lab</h3>
+                <p>Nurturing the next generation of Odia creators. We provide the equipment, the strategy, and the platform to make your voice heard.</p>
+            </div>
+            <div class="card animate" style="animation-delay: 0.8s;">
+                <h3>04. Event Marketing</h3>
+                <p>Taking countdowns and live events to the digital stage with real-time engagement and buzz-worthy promotional content.</p>
+            </div>
+        </div>
+        <div class="trusted-brands">
+            <h4>Trusted by Industry Leaders</h4>
+            <div class="logo-slider">
+                <div class="logo-item"><img src="assets/logo_accenture_color.png" alt="Accenture"></div>
+                <div class="logo-item"><img src="assets/logo_odisha_yatri_color.png" alt="Odisha Yatri"></div>
+                <div class="logo-item"><img src="assets/logo_blinkit_color.png" alt="Blinkit"></div>
+                <div class="logo-item"><img src="assets/logo_odisha_govt_color.png" alt="Odisha Govt"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="logo-item"><img src="assets/logo_accenture_color.png" alt="Accenture"></div>
+                <div class="logo-item"><img src="assets/logo_odisha_yatri_color.png" alt="Odisha Yatri"></div>
+                <div class="logo-item"><img src="assets/logo_blinkit_color.png" alt="Blinkit"></div>
+                <div class="logo-item"><img src="assets/logo_odisha_govt_color.png" alt="Odisha Govt"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 style="font-size: 2.5rem; text-align: center;">Let's <span class="gradient-text">Talk</span></h2>
+        <div class="contact-container animate">
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="YOUR NAME" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="YOUR EMAIL" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" placeholder="TELL US ABOUT YOUR PROJECT" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Komedy Countdown Odisha. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Modern Branding | Creative Strategy | Viral Excellence</p>
+    </footer>
+
+    <script>
+        // Simple scroll reveal
+        const cards = document.querySelectorAll('.animate');
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = '0.8s ease forwards';
+            observer.observe(card);
+        });
+
+        // Form submission (prevention for demo)
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! Our viral specialists will be in touch soon.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
